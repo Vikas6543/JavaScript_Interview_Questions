@@ -1,6 +1,3 @@
-// --- Directions
-// Write a function that accepts an integer N
-// and returns a NxN spiral matrix.
 // --- Examples
 //   matrix(2)
 //     [[undefined, undefined],
@@ -15,6 +12,7 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
+// ********* Solution: 1
 function matrix(n) {
   const results = [];
 
@@ -59,5 +57,3 @@ function matrix(n) {
 
   return results;
 }
-
-module.exports = matrix;
