@@ -12,7 +12,7 @@ console.log(factorial(5)); // 120
 function factorial(num) {
   let result = 1;
   for (let i = 1; i <= num; i++) {
-    result = result * i;
+    total *= i;
   }
   return result;
 }

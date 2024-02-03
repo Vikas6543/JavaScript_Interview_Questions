@@ -7,24 +7,23 @@
 
    => Example Code:
         const myPromise = new Promise((resolve, reject) => {
-         setTimeout(() => {
-           const a = 2;
-           const b = 2
-           if (a+b == 4) {
-             resolve(true);
-           } else {
-             reject(false);
-           }
-        }, 1000);
+        const timeout = 2000;
+        if (timeout < 0) {
+          reject('delay with negative number');
+        }
+        setTimeout(() => {
+          resolve('delay after ' + timeout);
+        }, timeout);
       });
 
       myPromise
-        .then((value) => {
-          console.log(`Promise resolved with value ${value}`);
-        })
-        .catch((error) => {
-          console.error(`Promise rejected with error: ${error}`);
-        });
+       .then((result) => {
+         console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+      
 
 *******************************************************
 2. How do you use callbacks to handle asynchronous code execution in JavaScript?
@@ -141,57 +140,37 @@
 9. Explain Call, Apply, & Bind Method in JavaScript?
    => In JavaScript, call, apply, & bind are methods that allow us to control the value of this keyword when invoking functions.
 
+   const person = {
+     name: 'vikas',
+     likes: 'cricket',
+     print: function (country) {
+        console.log(
+      `my name is ${this.name} & i like ${this.likes} and he is from ${country}`
+     );
+   },
+ };
+
+   const person2 = {
+     name: 'virat',
+     likes: 'footbal',
+   };
+
    => Call:
       a. The call() method allows us to call a function with a specific value for "this" and with any number of arguments passed individually.
       b. The first argument to call() is the object to be used as "this" inside the function, and any subsequent arguments are passed to the function as parameters.
       
-      Example Code:
-        const person = {
-        name: 'John',
-        age: 30,
-        greet: function(message) {
-           console.log(`${message}, my name is ${this.name} and I'm ${this.age} years old.`);
-         }
-       };
-
-       const anotherPerson = {
-         name: 'Sarah',
-         age: 25,
-      };
-
-      person.greet.call(anotherPerson, 'Hello');
-      // Output: Hello, my name is Sarah and I'm 25 years old.
-
+      Example Code: person.print.call(person2, 'india');
+        
    => Apply:
        The apply() method is similar to call(), but the second argument is an array of arguments to be passed to the function instead of being passed individually.
 
-       Example Code:
-         const numbers = [2, 4, 6, 8, 10];
-         const max = Math.max.apply(null, numbers);
-
-         console.log(max); // Output: 10
+       Example Code: person.print.apply(person2, ['india']);
     
    => Bind:
        The bind() method is similar to call(), but it doesn't immediately call the function. Instead, it returns a new function with the this value and any arguments that were passed to bind().
 
-       Example Code:
-         const person = {
-           name: 'John',
-           age: 30,
-           greet: function(message) {
-             console.log(`${message}, my name is ${this.name} and I'm ${this.age} years old.`);
-           }
-         };
-
-         const anotherPerson = {
-           name: 'Sarah',
-           age: 25,
-         };
-
-         const greetSarah = person.greet.bind(anotherPerson, 'Hello');
-
-         greetSarah(); // Output: Hello, my name is Sarah and I'm 25 years old.
-
+       Example Code: const result = person.print.bind(person2, 'india');
+       
 *******************************************************
 10. Slice & Splice Methods in JavaScript?
    => The slice() method returns a shallow copy of a portion of an array into a new array  selected from start to end (end not included) where start and end represent the index of items in that array.

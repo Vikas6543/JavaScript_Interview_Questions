@@ -18,3 +18,5 @@
      }
 
      The increment function modifies the counter variable outside of its own scope, which means that it has side effects on the program. Additionally, the function does not always return the same output for a given input, since it depends on the current value of counter. Therefore, the increment function is not pure.
+
+

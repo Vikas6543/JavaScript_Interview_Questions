@@ -23,7 +23,6 @@ console.log(chunk([1, 2, 3, 4, 5], 4));
 
 // Solution: 2
 function chunk(array, size) {
-  debugger;
   const chunked = [];
 
   for (let i = 0; i < array.length; i += size) {

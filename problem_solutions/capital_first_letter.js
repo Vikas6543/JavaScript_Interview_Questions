@@ -26,15 +26,15 @@ function capitalize(str) {
 
 // *********** Solution: 3
 // make firstletter to uppercase in each word and sort them on the basis of length.
-function myFunction(str) {
-  const splitted = str.split(' ');
-  const uppercasedFirstLetter = splitted.map((element) => {
-    return element[0].toUpperCase() + element.slice(1);
-  });
-  const sorted = uppercasedFirstLetter.sort((a, b) => {
-    return a.length - b.length;
-  });
-  return sorted.join(' ');
+function capitalise(str) {
+  const splittedString = str.split(' ');
+  const result = [];
+  for (let i = 0; i < splittedString.length; i++) {
+    const firstLetter = splittedString[i][0].toUpperCase();
+    const finalAnswer = firstLetter + splittedString[i].slice(1);
+    result.push(finalAnswer);
+  }
+  return result.join(' ');
 }
 
-console.log(myFunction('Hello my friend vikas')); // My Hello Vikas Friend
+console.log(capitalise('vikas is a good boy')); // Vikas Is A Good Boy

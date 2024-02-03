@@ -32,3 +32,10 @@ function reverse(str) {
 
   return reversed;
 }
+
+// *********** reverse number
+function reverseInt(num) {
+  const reversed = num.toString().split('').reverse().join('');
+
+  return parseInt(reversed) * Math.sign(num);
+}

@@ -1,9 +1,6 @@
 // *********** Solution: 1
 function union(arr1, arr2) {
-  var newArr = [];
-  for (var i = 0; i < arr1.length; i++) {
-    newArr.push(arr1[i]);
-  }
+  var newArr = [...arr1];
   for (var j = 0; j < arr2.length; j++) {
     if (newArr.indexOf(arr2[j]) === -1) {
       newArr.push(arr2[j]);

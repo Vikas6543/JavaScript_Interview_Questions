@@ -1,9 +1,9 @@
-function digitCount(array) {
+function digitCount(str) {
   let total = 0;
 
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] >= '0' && array[i] <= '9') {
-      total += parseInt(array[i]);
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] >= '0' && str[i] <= '9') {
+      total += parseInt(str[i]);
     }
   }
   return total;

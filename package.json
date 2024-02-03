@@ -1,0 +1,20 @@
+{
+  "name": "interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vikas6543/JavaScript_interview_questions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vikas6543/JavaScript_interview_questions/issues"
+  },
+  "homepage": "https://github.com/Vikas6543/JavaScript_interview_questions#readme"
+}

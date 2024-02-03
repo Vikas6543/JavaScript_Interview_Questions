@@ -63,3 +63,16 @@ function removeDuplicates(arr) {
 }
 
 console.log(removeDuplicates([1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10, 10]));
+
+// *********** remove elements of a given value
+function removeElement(nums, val) {
+  const result = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      result.push(nums[i]);
+    }
+  }
+  return result;
+}
+
+console.log(removeElement([3, 2, 1, 3, 5], 5)); // [ 3, 2, 1, 3 ]
