@@ -64,15 +64,26 @@ function removeDuplicates(arr) {
 
 console.log(removeDuplicates([1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10, 10]));
 
-// *********** remove elements of a given value
-function removeElement(nums, val) {
-  const result = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) {
-      result.push(nums[i]);
+// ********** Solution: 5 (remove duplicate values and dont use inbuilt methods)
+function removeDuplicates(arr) {
+  let uniqueArray = [];
+
+  for (let item of arr) {
+    let isDuplicateValue = false;
+
+    for (let item2 of uniqueArray) {
+      if (item === item2) {
+        isDuplicateValue = true;
+        break;
+      }
+    }
+
+    if (!isDuplicateValue) {
+      uniqueArray.push(item);
     }
   }
-  return result;
+
+  return uniqueArray;
 }
 
-console.log(removeElement([3, 2, 1, 3, 5], 5)); // [ 3, 2, 1, 3 ]
+console.log(removeDuplicates([1, 2, 3, 4, 2, 5, 6, 1])); // Output: [ 1, 2, 3, 4, 5, 6 ]
