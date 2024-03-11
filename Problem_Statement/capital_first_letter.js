@@ -30,9 +30,9 @@ function capitalise(str) {
   const splittedString = str.split(' ');
   const result = [];
   for (let i = 0; i < splittedString.length; i++) {
-    const firstLetter = splittedString[i][0].toUpperCase();
-    const finalAnswer = firstLetter + splittedString[i].slice(1);
-    result.push(finalAnswer);
+    result.push(
+      splittedString[i][0].toUpperCase() + splittedString[i].slice(1)
+    );
   }
   return result.join(' ');
 }
